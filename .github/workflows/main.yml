@@ -1,11 +1,17 @@
-name: Cypress Tests
-on: [push]
+on:
+  schedule:
+    #https://crontab.guru/#0_0_*_*_*
+    - cron: "*/30 * * * *"
+
 jobs:
- Cypress-Test:
-   runs-on: ubuntu-latest
-   steps:
-     - name: actions/checkout@v3
-       uses: cypress-io/github-action@v5.0.5
-       with:
-         command: npx cypress run --record --key c24965d1-90e6-4fb8-ba9e-425e7f717e74 
-         browser: chrome
+  cypress-run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      # Install NPM dependencies, cache them correctly
+      # and run all Cypress tests
+      - name: Cypress run
+        uses: cypress-io/github-action@v4
+        with:
+          start: npm start --record
