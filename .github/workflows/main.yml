@@ -4,12 +4,8 @@ jobs:
  Cypress-Test:
    runs-on: ubuntu-latest
    steps:
-     - name: Checkout GitCode
-       uses: actions/checkout@v2
- 
-     - name: Run Cypress Test
+     - name: actions/checkout@v3
        uses: cypress-io/github-action@v5.0.5
        with:
-         command: npx cypress run
-         project: /home/runner/work/Calculator-/Calculator-
+         command: npx cypress run --record --key c24965d1-90e6-4fb8-ba9e-425e7f717e74 
          browser: chrome
