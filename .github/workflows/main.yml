@@ -1,3 +1,5 @@
+name: Daily Regression Tests
+
 on:
   schedule:
     #https://crontab.guru/#0_0_*_*_*
