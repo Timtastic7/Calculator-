@@ -11,5 +11,5 @@ jobs:
        uses: cypress-io/github-action@v5.0.5
        with:
          command: npx cypress run
-         project: /home/runner/work/Calculator-/Calculator-/calculator
+         project: /home/runner/work/Calculator-/Calculator-
          browser: chrome
