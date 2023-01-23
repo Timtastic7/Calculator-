@@ -3,7 +3,7 @@ name: Daily Regression Tests
 on:
   schedule:
     #https://crontab.guru/#0_0_*_*_*
-    - cron: "*/30 * * * *"
+
 
 jobs:
   cypress-run:
